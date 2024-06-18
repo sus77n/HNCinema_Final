@@ -47,7 +47,7 @@ public class EditFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableEdit = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(453, 549));
 
         addEditBT.setText("Add");
@@ -148,7 +148,16 @@ public class EditFrame extends javax.swing.JFrame {
 
     private void addEditBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEditBTActionPerformed
         // TODO add your handling code here:
-        new addeditFilmFrame().setVisible(true);
+        addeditFilmFrame sf = null;
+        try {
+            sf =new addeditFilmFrame();
+        } catch (Exception ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        sf.setVisible(true);
+        sf.pack();
+        sf.setLocationRelativeTo(null);//center
+        this.setVisible(false);
     }//GEN-LAST:event_addEditBTActionPerformed
 
     private void resetEditBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetEditBTMouseClicked
