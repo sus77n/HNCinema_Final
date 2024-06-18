@@ -253,12 +253,14 @@ public class Login extends javax.swing.JFrame {
             AccountModel ac = ListAccount.checkAccount(username, password);
             if (ac != null) {
                 if (ac.getClass().toString().equals("class Model.User")) {
+                     JOptionPane.showMessageDialog(null, "Welcome customer to our cinema");
                     HomeFrame hf = new HomeFrame(false);
                     hf.setVisible(true);
                     hf.pack();
                     hf.setLocationRelativeTo(null);
                     this.dispose();
                 } else {
+                    JOptionPane.showMessageDialog(null, "Welcome Manager");
                     HomeFrame hf = new HomeFrame(true);
                     hf.setVisible(true);
                     hf.pack();
