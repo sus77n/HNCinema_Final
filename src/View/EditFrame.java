@@ -170,7 +170,7 @@ public class EditFrame extends javax.swing.JFrame {
 
                 ListFilm.getList().remove(film);
                 JOptionPane.showMessageDialog(null, "Remove successfully");
-                addeditFilmFrame.saveFilm();
+                ListFilm.saveFilm();
                 return;
 
             }
