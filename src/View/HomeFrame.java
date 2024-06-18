@@ -5,6 +5,7 @@
 package View;
 
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -17,15 +18,18 @@ public class HomeFrame extends javax.swing.JFrame {
      */
     public HomeFrame() {
         initComponents();
+        this.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+
     }
 
     public HomeFrame(boolean isManager) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         if (isManager) {
-            this.addFilmBT.setVisible(true);
+            this.editLabel.setVisible(true);
         } else {
-            this.addFilmBT.setVisible(false);
+            this.editLabel.setVisible(false);
         }
     }
 
@@ -40,13 +44,10 @@ public class HomeFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnListFilm = new javax.swing.JButton();
-        btnFavoriteFilm = new javax.swing.JButton();
-        addFilmBT = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         faLabel = new javax.swing.JLabel();
+        listfilmLabel = new javax.swing.JLabel();
+        editLabel = new javax.swing.JLabel();
         topPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -59,77 +60,25 @@ public class HomeFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         middlePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 800));
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        btnListFilm.setBackground(new java.awt.Color(251, 243, 213));
-        btnListFilm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnListFilm.setForeground(new java.awt.Color(0, 0, 0));
-        btnListFilm.setText("List film");
-        btnListFilm.setPreferredSize(new java.awt.Dimension(90, 30));
-        btnListFilm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListFilmActionPerformed(evt);
-            }
-        });
-
-        btnFavoriteFilm.setBackground(new java.awt.Color(251, 243, 213));
-        btnFavoriteFilm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnFavoriteFilm.setForeground(new java.awt.Color(0, 0, 0));
-        btnFavoriteFilm.setText("My favorite film");
-        btnFavoriteFilm.setPreferredSize(new java.awt.Dimension(130, 30));
-
-        addFilmBT.setBackground(new java.awt.Color(251, 243, 213));
-        addFilmBT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        addFilmBT.setForeground(new java.awt.Color(0, 0, 0));
-        addFilmBT.setText("Edit Film");
-        addFilmBT.setPreferredSize(new java.awt.Dimension(90, 30));
-        addFilmBT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addFilmBTActionPerformed(evt);
-            }
-        });
-
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-
-        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lf.png"))); // NOI18N
-        jLabel14.setText("List film");
-        jLabel14.setOpaque(true);
-        jLabel14.setPreferredSize(new java.awt.Dimension(250, 40));
-        jLabel14.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel14MouseMoved(evt);
-            }
-        });
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel14MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel14MouseExited(evt);
-            }
-        });
 
         faLabel.setBackground(new java.awt.Color(0, 0, 0));
         faLabel.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         faLabel.setForeground(new java.awt.Color(255, 255, 255));
-        faLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         faLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconFa.png"))); // NOI18N
-        faLabel.setText("Favorites");
+        faLabel.setText("    Favorites");
         faLabel.setOpaque(true);
         faLabel.setPreferredSize(new java.awt.Dimension(250, 40));
         faLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,59 +90,71 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
 
+        listfilmLabel.setBackground(new java.awt.Color(0, 0, 0));
+        listfilmLabel.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        listfilmLabel.setForeground(new java.awt.Color(255, 255, 255));
+        listfilmLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lficon.png"))); // NOI18N
+        listfilmLabel.setText("List film");
+        listfilmLabel.setOpaque(true);
+        listfilmLabel.setPreferredSize(new java.awt.Dimension(250, 40));
+        listfilmLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listfilmLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                listfilmLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                listfilmLabelMouseExited(evt);
+            }
+        });
+
+        editLabel.setBackground(new java.awt.Color(0, 0, 0));
+        editLabel.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        editLabel.setForeground(new java.awt.Color(255, 255, 255));
+        editLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editicon.png"))); // NOI18N
+        editLabel.setText("      Edit film");
+        editLabel.setOpaque(true);
+        editLabel.setPreferredSize(new java.awt.Dimension(250, 40));
+        editLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                editLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                editLabelMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(23, 23, 23))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(btnFavoriteFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(19, 19, 19)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(37, 37, 37)
-                            .addComponent(btnListFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(addFilmBT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(faLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(listfilmLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(editLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(faLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel13)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel13)))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel13)
+                .addGap(38, 38, 38)
+                .addComponent(listfilmLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(faLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnFavoriteFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(addFilmBT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(btnListFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(editLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3);
@@ -271,7 +232,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addGap(97, 97, 97)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(25, 25, 25))
         );
@@ -283,38 +244,49 @@ public class HomeFrame extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addGap(0, 30, Short.MAX_VALUE))
+                .addGap(0, 40, Short.MAX_VALUE))
         );
 
         jPanel1.add(bottomPanel);
-        bottomPanel.setBounds(340, 480, 1040, 290);
+        bottomPanel.setBounds(340, 470, 1030, 300);
 
         middlePanel.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/click.png"))); // NOI18N
+
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/enjoy.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
+        jLabel12.setText("jLabel12");
 
         javax.swing.GroupLayout middlePanelLayout = new javax.swing.GroupLayout(middlePanel);
         middlePanel.setLayout(middlePanelLayout);
         middlePanelLayout.setHorizontalGroup(
             middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, middlePanelLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+            .addGroup(middlePanelLayout.createSequentialGroup()
+                .addGroup(middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(middlePanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel7))
+                    .addGroup(middlePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         middlePanelLayout.setVerticalGroup(
             middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(middlePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, middlePanelLayout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(middlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
         );
 
         jPanel1.add(middlePanel);
-        middlePanel.setBounds(340, 290, 1040, 210);
+        middlePanel.setBounds(340, 280, 1040, 180);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -330,31 +302,37 @@ public class HomeFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseMoved
-
-    }//GEN-LAST:event_jLabel14MouseMoved
-
-    private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
-        jLabel4.setBackground(new java.awt.Color(255, 162, 127));
-    }//GEN-LAST:event_jLabel14MouseEntered
-
-    private void jLabel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseExited
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-    }//GEN-LAST:event_jLabel14MouseExited
-
     private void faLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faLabelMouseEntered
-        faLabel.setBackground(new java.awt.Color(255, 162, 127));
+        faLabel.setBackground(new java.awt.Color(125, 124, 124));
     }//GEN-LAST:event_faLabelMouseEntered
 
     private void faLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faLabelMouseExited
         faLabel.setBackground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_faLabelMouseExited
 
-    private void addFilmBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFilmBTActionPerformed
-        new EditFrame().setVisible(true);    }//GEN-LAST:event_addFilmBTActionPerformed
+    private void listfilmLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listfilmLabelMouseEntered
+        listfilmLabel.setBackground(new java.awt.Color(125, 124, 124));
+    }//GEN-LAST:event_listfilmLabelMouseEntered
 
-    private void btnListFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListFilmActionPerformed
-        new ListFilmFrame().setVisible(true);    }//GEN-LAST:event_btnListFilmActionPerformed
+    private void listfilmLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listfilmLabelMouseExited
+        listfilmLabel.setBackground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_listfilmLabelMouseExited
+
+    private void editLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseEntered
+        editLabel.setBackground(new java.awt.Color(125, 124, 124));
+    }//GEN-LAST:event_editLabelMouseEntered
+
+    private void editLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseExited
+        editLabel.setBackground(new java.awt.Color(0, 0, 0));
+    }//GEN-LAST:event_editLabelMouseExited
+
+    private void listfilmLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listfilmLabelMouseClicked
+        new ListFilmFrame().setVisible(true);
+    }//GEN-LAST:event_listfilmLabelMouseClicked
+
+    private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
+        new EditFrame().setVisible(true);
+    }//GEN-LAST:event_editLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -392,16 +370,14 @@ public class HomeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addFilmBT;
     private javax.swing.JPanel bottomPanel;
-    private javax.swing.JButton btnFavoriteFilm;
-    private javax.swing.JButton btnListFilm;
+    private javax.swing.JLabel editLabel;
     private javax.swing.JLabel faLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -412,6 +388,7 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel listfilmLabel;
     private javax.swing.JPanel middlePanel;
     private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
