@@ -24,10 +24,11 @@ import java.util.logging.Logger;
  */
 public class addeditFilmFrame extends javax.swing.JFrame {
 
-   private String image;
+    private String image;
 
     private Film film;
-    public addeditFilmFrame(Film film,boolean canAdd) throws IOException {
+
+    public addeditFilmFrame(Film film, boolean canAdd) throws IOException {
         initComponents();
         this.film = null;
         this.setLocationRelativeTo(null);
@@ -42,7 +43,7 @@ public class addeditFilmFrame extends javax.swing.JFrame {
         this.imageEditTF.setIcon(new ImageIcon(img.getScaledInstance(this.imageEditTF.getWidth(), this.imageEditTF.getHeight(), 0)));
         // this.trailerEdit nhớ set trailer ở 
         this.film = film;
-        if(!canAdd){
+        if (!canAdd) {
             this.applyBT.setVisible(false);
         }
     }
@@ -220,21 +221,22 @@ public class addeditFilmFrame extends javax.swing.JFrame {
 
     private void imageEditTFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageEditTFMouseClicked
         // TODO add your handling code here:
-        JFileChooser jfc =  new JFileChooser("/src/images");
+        JFileChooser jfc = new JFileChooser("C:\\CSE_203\\project_final\\HNCinema_Final\\src\\images");
         jfc.showOpenDialog(null);
         File file = new File("");
-        if(jfc.getSelectedFile() != null){
+        if (jfc.getSelectedFile() != null) {
             file = jfc.getSelectedFile();
-        }else{
+            try {
+                Image img = ImageIO.read(file);
+                this.image = file.getPath();
+                this.imageEditTF.setIcon(new ImageIcon(img.getScaledInstance(this.imageEditTF.getWidth(), this.imageEditTF.getHeight(), 0)));
+            } catch (IOException ex) {
+                Logger.getLogger(addeditFilmFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
             JOptionPane.showMessageDialog(null, "Image can not be empty");
         }
-        try {
-            Image img = ImageIO.read(file);
-            this.image = file.getPath();
-            this.imageEditTF.setIcon(new ImageIcon(img.getScaledInstance(this.imageEditTF.getWidth(), this.imageEditTF.getHeight(), 0)));
-        } catch (IOException ex) {
-            Logger.getLogger(addeditFilmFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
 
     }//GEN-LAST:event_imageEditTFMouseClicked
 
@@ -286,7 +288,6 @@ public class addeditFilmFrame extends javax.swing.JFrame {
         ListFilm.saveFilm();
     }//GEN-LAST:event_applyBTActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

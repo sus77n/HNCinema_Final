@@ -4,6 +4,13 @@
  */
 package View;
 
+import Model.Film;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author haing
@@ -13,8 +20,23 @@ public class ShowFilmInfor extends javax.swing.JFrame {
     /**
      * Creates new form ShowFilmInfor
      */
-    public ShowFilmInfor() {
+    private String image;
+    public ShowFilmInfor(){
         initComponents();
+    }
+    
+    public ShowFilmInfor(Film film) throws IOException {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.txtNameFilm.setText("Film's name : "+film.getNameFilm());
+        this.txtActors.setText("Actors'name : "+film.getActor());
+        this.txtGenre.setText("Genre : "+film.getGenre());
+        this.txtLengthFilm.setText("Film's length : "+film.getTime());
+        this.txtIntro.setText(film.getIntroduction());
+        File file = new File(film.getPathImage());
+        Image img = ImageIO.read(file);
+        this.image = file.getPath();
+        this.imageLabel.setIcon(new ImageIcon(img.getScaledInstance(this.imageLabel.getWidth(),this.imageLabel.getHeight(), 0)));
     }
 
     /**

@@ -38,11 +38,7 @@ public class ListFilm {
     
     public static void saveFilm(){
         String fName  = "src/Data/listFilm.dat";
-         if (list.size() == 0) {
-            System.out.println("List film is empty");
-            return;
-        }
-        
+
         try{
             FileOutputStream f = new FileOutputStream(fName);
             ObjectOutputStream fo = new ObjectOutputStream(f);
@@ -58,9 +54,7 @@ public class ListFilm {
     
     public static void loadFilm(){
         String fName = "src/Data/listFilm.dat";
-        if(list.size() >  0){
-            list.clear();
-        }
+
         try {
             File f = new File(fName);
             if (!f.exists()){

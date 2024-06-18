@@ -4,10 +4,17 @@
  */
 package View;
 
+import Controller.ListFilm;
 import Model.Film;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,8 +25,11 @@ public class ListFilmFrame extends javax.swing.JFrame {
     /**
      * Creates new form ListFilmFrame
      */
+
     public ListFilmFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        showing();
     }
 
     /**
@@ -36,7 +46,7 @@ public class ListFilmFrame extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableFilm = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -71,25 +81,27 @@ public class ListFilmFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 781, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(71, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(6, 6, 6)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 495, Short.MAX_VALUE)))
         );
 
         pack();
@@ -99,16 +111,29 @@ public class ListFilmFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         int chosenRow = this.tableFilm.rowAtPoint(evt.getPoint());
         String nameFilm = tableFilm.getValueAt(chosenRow, 0).toString();
-        for(Film film : listFilms){
-            if(film.getNameFilm().equals(nameFilm)){
+        for (Film film : ListFilm.getList()) {
+            if (film.getNameFilm().equals(nameFilm)) {
                 try {
                     new ShowFilmInfor(film).setVisible(true);
                 } catch (IOException ex) {
-                    Logger.getLogger(listFilmFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    java.util.logging.Logger.getLogger(ListFilmFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                 }
             }
         }
     }//GEN-LAST:event_tableFilmMouseClicked
+
+    private void showing() {
+        DefaultTableModel tableF = (DefaultTableModel) tableFilm.getModel();
+        tableF.setRowCount(0);
+        Vector row;
+
+        for (Film film : ListFilm.getList()) {
+            row = new Vector<>();
+            row.add(film.getNameFilm());
+            row.add(film.getGenre());
+            tableF.addRow(row);
+        }
+    }
 
     /**
      * @param args the command line arguments
