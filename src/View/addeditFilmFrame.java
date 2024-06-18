@@ -277,15 +277,12 @@ public class addeditFilmFrame extends javax.swing.JFrame {
 
         ListFilm.getList().add(new Film(name, genre, actor, image, "", length, introduction));
         JOptionPane.showMessageDialog(null, "Apply successfully");
-
-        //        String name = line;
-        //                String genre = br.readLine();
-        //                String actor = br.readLine();
-        //                String pathImage = br.readLine();
-        //                String pathVideo = br.readLine();
-        //                String time = br.readLine();
-        //                String introduction = br.readLine();
         ListFilm.saveFilm();
+        this.nameEditTF.setText("");
+        this.genreEditTF.setText("");
+        this.actorEditTF.setText("");
+        this.lengthEditTF.setText("");
+        this.introEditTF.setText("");
     }//GEN-LAST:event_applyBTActionPerformed
 
     public static void main(String args[]) {
