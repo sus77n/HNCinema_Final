@@ -18,13 +18,13 @@ public class HomeFrame extends javax.swing.JFrame {
     public HomeFrame() {
         initComponents();
     }
-    
-     public HomeFrame(boolean isManager) {
+
+    public HomeFrame(boolean isManager) {
         initComponents();
         this.setLocationRelativeTo(null);
-        if(isManager){
+        if (isManager) {
             this.addFilmBT.setVisible(true);
-        }else{
+        } else {
             this.addFilmBT.setVisible(false);
         }
     }
@@ -63,6 +63,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 800));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
@@ -76,6 +77,11 @@ public class HomeFrame extends javax.swing.JFrame {
         btnListFilm.setForeground(new java.awt.Color(0, 0, 0));
         btnListFilm.setText("List film");
         btnListFilm.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnListFilm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListFilmActionPerformed(evt);
+            }
+        });
 
         btnFavoriteFilm.setBackground(new java.awt.Color(251, 243, 213));
         btnFavoriteFilm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -88,6 +94,11 @@ public class HomeFrame extends javax.swing.JFrame {
         addFilmBT.setForeground(new java.awt.Color(0, 0, 0));
         addFilmBT.setText("Edit Film");
         addFilmBT.setPreferredSize(new java.awt.Dimension(90, 30));
+        addFilmBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addFilmBTActionPerformed(evt);
+            }
+        });
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
@@ -320,7 +331,7 @@ public class HomeFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseMoved
-        return;
+
     }//GEN-LAST:event_jLabel14MouseMoved
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
@@ -338,6 +349,12 @@ public class HomeFrame extends javax.swing.JFrame {
     private void faLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faLabelMouseExited
         faLabel.setBackground(new java.awt.Color(0, 0, 0));
     }//GEN-LAST:event_faLabelMouseExited
+
+    private void addFilmBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFilmBTActionPerformed
+        new EditFrame().setVisible(true);    }//GEN-LAST:event_addFilmBTActionPerformed
+
+    private void btnListFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListFilmActionPerformed
+        new ListFilmFrame().setVisible(true);    }//GEN-LAST:event_btnListFilmActionPerformed
 
     /**
      * @param args the command line arguments

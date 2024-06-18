@@ -4,11 +4,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author haing
  */
-public class Film {
+public class Film implements Serializable{
     private String nameFilm;
     private String genre;
     private String actor;

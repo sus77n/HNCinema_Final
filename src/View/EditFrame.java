@@ -157,7 +157,6 @@ public class EditFrame extends javax.swing.JFrame {
         sf.setVisible(true);
         sf.pack();
         sf.setLocationRelativeTo(null);//center
-        this.setVisible(false);
     }//GEN-LAST:event_addEditBTActionPerformed
 
     private void resetEditBTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetEditBTMouseClicked
