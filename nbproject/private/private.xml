@@ -4,17 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/Login.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Model/User.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/EditFrame.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Model/AccountModel.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Model/Film.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Model/ManagerAccount.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/SignUp.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Controller/ListAccount.java</file>
             <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/HomeFrame.java</file>
             <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/addeditFilmFrame.java</file>
             <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/ListFilmFrame.java</file>
-            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/Controller/ListFilm.java</file>
+            <file>file:/C:/CSE_203/project_final/HNCinema_Final/src/View/ShowFilmInfor.java</file>
         </group>
     </open-files>
 </project-private>

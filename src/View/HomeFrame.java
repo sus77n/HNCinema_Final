@@ -41,9 +41,9 @@ public class HomeFrame extends javax.swing.JFrame {
         btnListFilm = new javax.swing.JButton();
         btnFavoriteFilm = new javax.swing.JButton();
         addFilmBT = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 530));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel2.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 302, -1));
@@ -54,10 +54,10 @@ public class HomeFrame extends javax.swing.JFrame {
                 btnListFilmActionPerformed(evt);
             }
         });
-        jPanel2.add(btnListFilm, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 120, 50));
+        jPanel2.add(btnListFilm, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 120, 50));
 
         btnFavoriteFilm.setText("My favorite film");
-        jPanel2.add(btnFavoriteFilm, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 120, 50));
+        jPanel2.add(btnFavoriteFilm, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 120, 50));
 
         addFilmBT.setText("Edit Film");
         addFilmBT.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +65,10 @@ public class HomeFrame extends javax.swing.JFrame {
                 addFilmBTActionPerformed(evt);
             }
         });
-        jPanel2.add(addFilmBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, 120, 50));
+        jPanel2.add(addFilmBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 120, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\CSE_203\\project_final\\HNCinema_Final\\src\\images\\welcome.png")); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +77,7 @@ public class HomeFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,6 +138,7 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JButton addFilmBT;
     private javax.swing.JButton btnFavoriteFilm;
     private javax.swing.JButton btnListFilm;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
