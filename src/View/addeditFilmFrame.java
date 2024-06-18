@@ -82,7 +82,7 @@ public class addeditFilmFrame extends javax.swing.JFrame {
         trailerEdit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(697, 557));
+        setPreferredSize(new java.awt.Dimension(800, 800));
 
         jLabel1.setText("Name film:");
 
