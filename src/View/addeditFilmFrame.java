@@ -220,7 +220,7 @@ public class addeditFilmFrame extends javax.swing.JFrame {
 
     private void imageEditTFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageEditTFMouseClicked
         // TODO add your handling code here:
-        JFileChooser jfc =  new JFileChooser("C:\\CSE_203\\projectOOP\\Project_203_v2\\src\\main\\java\\listFilm_Icon");
+        JFileChooser jfc =  new JFileChooser("/src/images");
         jfc.showOpenDialog(null);
         File file = new File("");
         if(jfc.getSelectedFile() != null){
@@ -283,32 +283,10 @@ public class addeditFilmFrame extends javax.swing.JFrame {
         //                String pathVideo = br.readLine();
         //                String time = br.readLine();
         //                String introduction = br.readLine();
-        saveFilm();
+        ListFilm.saveFilm();
     }//GEN-LAST:event_applyBTActionPerformed
 
-    public static void saveFilm(){
-        try {
-            File f = new File("C:\\CSE_203\\projectOOP\\Project_203_v2\\filmList.txt");
-            FileWriter fw = new FileWriter(f);
-            PrintWriter pw = new PrintWriter(fw);
-            for (Film film : ListFilm.getList()) {
-                pw.println(film.getNameFilm());
-                pw.println(film.getGenre());
-                pw.println(film.getActor());
-                pw.println(film.getPathImage());
-                pw.println(film.getPathVideo());
-                pw.println(film.getTime());
-                pw.println(film.getIntroduction());
-            }
-            pw.close();
-            fw.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
