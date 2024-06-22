@@ -61,9 +61,11 @@ public class ListAccount {
     
     public static void loadToFile(){
         String fName = "src/Data/listAccount.dat";
+        
         if(list.size() >  0){
             list.clear();
         }
+        
         try {
             File f = new File(fName);
             if (!f.exists()){

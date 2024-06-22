@@ -7,7 +7,6 @@ package View;
 import Controller.ListAccount;
 import Model.AccountModel;
 import Model.User;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;

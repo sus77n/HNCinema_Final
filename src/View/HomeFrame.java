@@ -28,8 +28,10 @@ public class HomeFrame extends javax.swing.JFrame {
         this.setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         if (isManager) {
             this.editLabel.setVisible(true);
+            this.faLabel.setVisible(false);
         } else {
             this.editLabel.setVisible(false);
+            this.faLabel.setVisible(true);
         }
     }
 
@@ -48,6 +50,7 @@ public class HomeFrame extends javax.swing.JFrame {
         faLabel = new javax.swing.JLabel();
         listfilmLabel = new javax.swing.JLabel();
         editLabel = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         topPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -130,6 +133,15 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Exit");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -142,7 +154,10 @@ public class HomeFrame extends javax.swing.JFrame {
                         .addComponent(editLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jLabel13)))
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel14)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -156,7 +171,9 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addComponent(faLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(editLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(76, 76, 76))
         );
 
         jPanel1.add(jPanel3);
@@ -341,6 +358,15 @@ public class HomeFrame extends javax.swing.JFrame {
         lf.setVisible(true);
     }//GEN-LAST:event_faLabelMouseClicked
 
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+
+        Login hf = new Login();
+        hf.setVisible(true);
+        hf.pack();
+        hf.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -385,6 +411,7 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
