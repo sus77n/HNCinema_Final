@@ -4,13 +4,6 @@
  */
 package View;
 
-import Model.Film;
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
 /**
  *
  * @author haing
@@ -20,23 +13,8 @@ public class ShowFilmInfor extends javax.swing.JFrame {
     /**
      * Creates new form ShowFilmInfor
      */
-    private String image;
-    public ShowFilmInfor(){
+    public ShowFilmInfor() {
         initComponents();
-    }
-    
-    public ShowFilmInfor(Film film) throws IOException {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        this.txtNameFilm.setText(film.getNameFilm());
-        this.txtActors.setText(film.getActor());
-        this.txtGenre.setText(film.getGenre());
-        this.txtLengthFilm.setText(film.getTime());
-        this.txtIntro.setText(film.getIntroduction());
-        File file = new File(film.getPathImage());
-        Image img = ImageIO.read(file);
-        this.image = file.getPath();
-        this.imageLabel.setIcon(new ImageIcon(img.getScaledInstance(this.imageLabel.getWidth(),this.imageLabel.getHeight(), 0)));
     }
 
     /**
@@ -48,118 +26,116 @@ public class ShowFilmInfor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        imageLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtNameFilm = new javax.swing.JTextField();
-        txtActors = new javax.swing.JTextField();
-        txtGenre = new javax.swing.JTextField();
-        txtLengthFilm = new javax.swing.JTextField();
-        txtIntro = new javax.swing.JTextField();
-        btnPlayFilm = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-
-        jLabel1.setText("jLabel1");
-
-        jLabel3.setText("jLabel3");
-
-        jLabel4.setText("jLabel4");
+        nameFilm = new javax.swing.JLabel();
+        l1 = new javax.swing.JLabel();
+        l3 = new javax.swing.JLabel();
+        l2 = new javax.swing.JLabel();
+        actorLabel2 = new javax.swing.JLabel();
+        genreLabel = new javax.swing.JLabel();
+        time = new javax.swing.JLabel();
+        actor = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        descrip = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setPreferredSize(new java.awt.Dimension(1500, 770));
 
-        imageLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        imageLabel.setText("          image");
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("NỘI DUNG FILM");
+        nameFilm.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        nameFilm.setForeground(new java.awt.Color(255, 255, 255));
+        nameFilm.setText("Film name");
 
-        txtNameFilm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameFilmActionPerformed(evt);
-            }
-        });
+        l1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        l1.setForeground(new java.awt.Color(204, 204, 204));
+        l1.setText("Genre:");
 
-        btnPlayFilm.setText("Play film");
+        l3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        l3.setForeground(new java.awt.Color(204, 204, 204));
+        l3.setText("Time:");
 
-        jLabel5.setText("Name:");
+        l2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        l2.setForeground(new java.awt.Color(204, 204, 204));
+        l2.setText("Actor:");
 
-        jLabel6.setText("Actor:");
+        actorLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        actorLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        actorLabel2.setText("Description:");
 
-        jLabel7.setText("Genre:");
+        genreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        genreLabel.setForeground(new java.awt.Color(204, 204, 204));
+        genreLabel.setText("Genre:");
 
-        jLabel8.setText("Length:");
+        time.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(204, 204, 204));
+        time.setText("Genre:");
 
-        jLabel9.setText("Introdution:");
+        actor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        actor.setForeground(new java.awt.Color(204, 204, 204));
+        actor.setText("Genre:");
+
+        descrip.setBackground(new java.awt.Color(0, 0, 0));
+        descrip.setColumns(20);
+        descrip.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        descrip.setRows(5);
+        descrip.setBorder(null);
+        jScrollPane1.setViewportView(descrip);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel2)
-                        .addGap(158, 158, 158))
+                        .addComponent(l1)
+                        .addGap(18, 18, 18)
+                        .addComponent(genreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(l3)
+                                .addGap(25, 25, 25)
+                                .addComponent(time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(l2)
+                                .addGap(22, 22, 22)
+                                .addComponent(actor, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 2, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtActors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNameFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtLengthFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPlayFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(nameFilm)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(actorLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(108, 108, 108))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
+                .addComponent(nameFilm)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNameFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtActors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
+                            .addComponent(l1)
+                            .addComponent(actorLabel2)
+                            .addComponent(genreLabel))
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtGenre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
+                            .addComponent(l2)
+                            .addComponent(actor))
+                        .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtLengthFilm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(txtIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addComponent(btnPlayFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 8, Short.MAX_VALUE))
+                            .addComponent(l3)
+                            .addComponent(time)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(693, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,24 +143,18 @@ public class ShowFilmInfor extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNameFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameFilmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameFilmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,22 +192,16 @@ public class ShowFilmInfor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPlayFilm;
-    private javax.swing.JLabel imageLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel actor;
+    private javax.swing.JLabel actorLabel2;
+    private javax.swing.JTextArea descrip;
+    private javax.swing.JLabel genreLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtActors;
-    private javax.swing.JTextField txtGenre;
-    private javax.swing.JTextField txtIntro;
-    private javax.swing.JTextField txtLengthFilm;
-    private javax.swing.JTextField txtNameFilm;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel l1;
+    private javax.swing.JLabel l2;
+    private javax.swing.JLabel l3;
+    private javax.swing.JLabel nameFilm;
+    private javax.swing.JLabel time;
     // End of variables declaration//GEN-END:variables
 }
