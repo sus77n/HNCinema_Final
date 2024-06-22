@@ -4,11 +4,13 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author haing
  */
-public class ManagerAccount extends AccountModel {
+public class ManagerAccount extends AccountModel{
 
     public ManagerAccount(String username, String password, String phoneNumber) {
         super(username, password, phoneNumber);

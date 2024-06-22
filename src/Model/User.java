@@ -24,6 +24,13 @@ public class User extends AccountModel {
         return listFavorite;
     }
 
-    
+    public boolean checkFaFilm(Film f){
+        for (Film film : listFavorite) {
+            if (film.getNameFilm().equals(f.getNameFilm())) {
+                return false;
+            }
+        }
+        return true;
+    }
     
 }

@@ -4,7 +4,6 @@
  */
 package Controller;
 
-import Model.AccountModel;
 import Model.Film;
 import java.io.File;
 import java.io.FileInputStream;
