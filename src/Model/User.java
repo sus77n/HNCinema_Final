@@ -5,16 +5,25 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author haing
  */
 public class User extends AccountModel {
+    
+    private List<Film> listFavorite = new ArrayList<>();
 
     public User(String username, String password, String phoneNumber) {
         super(username, password, phoneNumber);
     }
 
+    public List<Film> getListFavorite() {
+        return listFavorite;
+    }
+
+    
     
 }

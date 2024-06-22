@@ -14,9 +14,7 @@ import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+     
     public Login() {
         initComponents();
         jpassword.setEchoChar('\u25cf');
@@ -253,7 +251,8 @@ public class Login extends javax.swing.JFrame {
             AccountModel ac = ListAccount.checkAccount(username, password);
             if (ac != null) {
                 if (ac.getClass().toString().equals("class Model.User")) {
-                     JOptionPane.showMessageDialog(null, "Welcome customer to our cinema");
+                    this.user = (User)ac;
+                    JOptionPane.showMessageDialog(null, "Welcome customer to our cinema");
                     HomeFrame hf = new HomeFrame(false);
                     hf.setVisible(true);
                     hf.pack();
@@ -322,7 +321,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
+    public static User user;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSignup;

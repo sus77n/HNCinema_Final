@@ -32,7 +32,7 @@ public class ListAccount {
             }
         }
         list.add(new User(username, password, phoneNumber));
-        saveToFile("src/Data/listAccount.dat");
+        saveToFile();
         return true;
     }
     
@@ -44,7 +44,7 @@ public class ListAccount {
             }
         }
         list.add(new ManagerAccount(username, password, phoneNumber));
-        saveToFile("src/Data/listAccount.dat");
+        saveToFile();
         return true;
     }
     
@@ -59,7 +59,8 @@ public class ListAccount {
         return null;
     }
     
-    public static void loadToFile(String fName){
+    public static void loadToFile(){
+        String fName = "src/Data/listAccount.dat";
         if(list.size() >  0){
             list.clear();
         }
@@ -81,7 +82,8 @@ public class ListAccount {
         }
     }
     
-    public static void saveToFile(String fName){
+    public static void saveToFile(){
+        String fName = "src/Data/listAccount.dat";
         if (list.size() == 0) {
             System.out.println("List account is empty");
             return;

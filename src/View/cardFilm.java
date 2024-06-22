@@ -16,7 +16,6 @@ public class cardFilm extends javax.swing.JPanel {
     private String genre;
     private String actor;
     private String pathImage;
-    private String pathVideo;
     private String time;
     private String introduction;
     private Film film;
@@ -54,6 +53,11 @@ public class cardFilm extends javax.swing.JPanel {
         filmName.setText("Film name: ");
 
         pic.setImage(new javax.swing.ImageIcon(getClass().getResource("/images/lat-mat-7.jpg"))); // NOI18N
+        pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                picMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -76,6 +80,12 @@ public class cardFilm extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_picMouseClicked
+        ShowFilmInfor showfilm = new ShowFilmInfor(film);
+        showfilm.setVisible(true);
+        
+    }//GEN-LAST:event_picMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
