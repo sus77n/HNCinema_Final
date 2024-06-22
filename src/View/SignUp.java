@@ -175,6 +175,11 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         isMana.setText("Manager");
+        isMana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                isManaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout leftSignUpPanelLayout = new javax.swing.GroupLayout(leftSignUpPanel);
         leftSignUpPanel.setLayout(leftSignUpPanelLayout);
@@ -282,18 +287,10 @@ public class SignUp extends javax.swing.JFrame {
         String phoneNumber = phoneNumberTextField1.getText();
         String username = usernameTextfield2.getText();
         String password = passwordTextField1.getText();
-        if (!checkLetter_Length(phoneNumber)) {
+        if (phoneNumber.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Your must fill out all text fields");
+        } else if (!checkLetter_Length(phoneNumber)) {
             JOptionPane.showMessageDialog(null, "This number must have ten numbers or not contain letter");
-
-        } else if (phoneNumber.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Email can not be empty");
-
-        } else if (username.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "User can not be empty");
-
-        } else if (password.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Password can not be empty");
-
         } else if (!isCus.isSelected() && !isMana.isSelected()) {
             JOptionPane.showMessageDialog(null, "Position can not be empty");
         } else {
@@ -331,8 +328,12 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameTextfield2ActionPerformed
 
     private void isCusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isCusActionPerformed
-        // TODO add your handling code here:
+        isMana.setSelected(false);
     }//GEN-LAST:event_isCusActionPerformed
+
+    private void isManaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isManaActionPerformed
+        isCus.setSelected(false);
+    }//GEN-LAST:event_isManaActionPerformed
 
     public static boolean checkLetter_Length(String input) {
         if (input.length() != 10) {

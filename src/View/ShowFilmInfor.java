@@ -57,41 +57,51 @@ public class ShowFilmInfor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(600, 550));
         setPreferredSize(new java.awt.Dimension(1500, 770));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nameFilm.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         nameFilm.setForeground(new java.awt.Color(255, 255, 255));
         nameFilm.setText("Film name");
+        jPanel1.add(nameFilm, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 46, -1, -1));
 
         l1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         l1.setForeground(new java.awt.Color(204, 204, 204));
         l1.setText("Genre:");
+        jPanel1.add(l1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 142, -1, -1));
 
         l3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         l3.setForeground(new java.awt.Color(204, 204, 204));
         l3.setText("Time:");
+        jPanel1.add(l3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 261, -1, -1));
 
         l2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         l2.setForeground(new java.awt.Color(204, 204, 204));
         l2.setText("Actor:");
+        jPanel1.add(l2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 202, -1, -1));
 
         actorLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         actorLabel2.setForeground(new java.awt.Color(204, 204, 204));
         actorLabel2.setText("Description:");
+        jPanel1.add(actorLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 314, -1, -1));
 
         genreLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         genreLabel.setForeground(new java.awt.Color(204, 204, 204));
         genreLabel.setText("Genre:");
+        jPanel1.add(genreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 146, 520, -1));
 
         time.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         time.setForeground(new java.awt.Color(204, 204, 204));
         time.setText("Genre:");
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 265, 530, -1));
 
         actor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         actor.setForeground(new java.awt.Color(204, 204, 204));
         actor.setText("Genre:");
+        jPanel1.add(actor, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 206, 530, -1));
 
         descrip.setBackground(new java.awt.Color(0, 0, 0));
         descrip.setColumns(20);
@@ -99,6 +109,9 @@ public class ShowFilmInfor extends javax.swing.JFrame {
         descrip.setRows(5);
         descrip.setBorder(null);
         jScrollPane1.setViewportView(descrip);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 357, 547, 113));
+        jPanel1.add(pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 353, 208, 300));
 
         btnAddFa.setBackground(new java.awt.Color(255, 204, 204));
         btnAddFa.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -110,89 +123,19 @@ public class ShowFilmInfor extends javax.swing.JFrame {
                 btnAddFaActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pic, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(372, 372, 372)
-                        .addComponent(btnAddFa, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(l1)
-                                .addGap(18, 18, 18)
-                                .addComponent(genreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(l3)
-                                        .addGap(25, 25, 25)
-                                        .addComponent(time, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(l2)
-                                        .addGap(22, 22, 22)
-                                        .addComponent(actor, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 2, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameFilm)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(actorLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(108, 108, 108))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(nameFilm)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l1)
-                            .addComponent(actorLabel2)
-                            .addComponent(genreLabel))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l2)
-                            .addComponent(actor))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l3)
-                            .addComponent(time)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(pic, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(btnAddFa, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(326, Short.MAX_VALUE))
-        );
+        jPanel1.add(btnAddFa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 499, 144, 53));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 61, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 929, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
