@@ -15,19 +15,17 @@ public class Film implements Serializable{
     private String genre;
     private String actor;
     private String pathImage;
-    private String pathVideo;
     private String time;
     private String introduction;
 
     public Film() {
     }
 
-    public Film(String nameFilm, String genre, String actor, String pathImage, String pathVideo, String time, String introduction) {
+    public Film(String nameFilm, String genre, String actor, String pathImage,String time, String introduction) {
         this.nameFilm = nameFilm;
         this.genre = genre;
         this.actor = actor;
         this.pathImage = pathImage;
-        this.pathVideo = pathVideo;
         this.time = time;
         this.introduction = introduction;
     }
@@ -62,14 +60,6 @@ public class Film implements Serializable{
 
     public void setPathImage(String pathImage) {
         this.pathImage = pathImage;
-    }
-
-    public String getPathVideo() {
-        return pathVideo;
-    }
-
-    public void setPathVideo(String pathVideo) {
-        this.pathVideo = pathVideo;
     }
 
     public String getTime() {

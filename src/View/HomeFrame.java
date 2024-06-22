@@ -81,6 +81,9 @@ public class HomeFrame extends javax.swing.JFrame {
         faLabel.setOpaque(true);
         faLabel.setPreferredSize(new java.awt.Dimension(250, 40));
         faLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                faLabelMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 faLabelMouseEntered(evt);
             }
@@ -332,6 +335,11 @@ public class HomeFrame extends javax.swing.JFrame {
     private void editLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editLabelMouseClicked
         new EditFrame().setVisible(true);
     }//GEN-LAST:event_editLabelMouseClicked
+
+    private void faLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faLabelMouseClicked
+        ListFavorite lf = new ListFavorite();
+        lf.setVisible(true);
+    }//GEN-LAST:event_faLabelMouseClicked
 
     /**
      * @param args the command line arguments

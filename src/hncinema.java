@@ -17,8 +17,9 @@ public class hncinema {
 
 
    public static void main(String[] args) throws IOException {
-        ListAccount.loadToFile("src/Data/listAccount.dat");
+        ListAccount.loadToFile();
         ListFilm.loadFilm();
+        
         Login loginframe = new Login();
         loginframe.setVisible(true);
         loginframe.pack();

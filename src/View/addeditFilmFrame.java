@@ -17,6 +17,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.filechooser.FileSystemView;
 
 /**
  *
@@ -221,7 +222,7 @@ public class addeditFilmFrame extends javax.swing.JFrame {
 
     private void imageEditTFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageEditTFMouseClicked
         // TODO add your handling code here:
-        JFileChooser jfc = new JFileChooser("C:\\CSE_203\\project_final\\HNCinema_Final\\src\\images");
+        JFileChooser jfc = new JFileChooser("src/images");
         jfc.showOpenDialog(null);
         File file = new File("");
         if (jfc.getSelectedFile() != null) {
@@ -230,6 +231,7 @@ public class addeditFilmFrame extends javax.swing.JFrame {
                 Image img = ImageIO.read(file);
                 this.image = file.getPath();
                 this.imageEditTF.setIcon(new ImageIcon(img.getScaledInstance(this.imageEditTF.getWidth(), this.imageEditTF.getHeight(), 0)));
+                this.image = file.getName();
             } catch (IOException ex) {
                 Logger.getLogger(addeditFilmFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -274,8 +276,10 @@ public class addeditFilmFrame extends javax.swing.JFrame {
         String actor = this.actorEditTF.getText();
         String length = this.lengthEditTF.getText();
         String introduction = this.introEditTF.getText();
+        
+        image = "/images/"+ image;
 
-        ListFilm.getList().add(new Film(name, genre, actor, image, "", length, introduction));
+        ListFilm.getList().add(new Film(name, genre, actor, image,length, introduction));
         JOptionPane.showMessageDialog(null, "Apply successfully");
         ListFilm.saveFilm();
         this.nameEditTF.setText("");
